@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Polly.JS" width="400px" src="https://pixelitystudios.com/public/img/pixelity.js.min.png" />
+  <img alt="Polly.JS" width="400px" src="https://pixelitystudios.com/public/img/pixelity.js.png" />
 </p>
 <h2 align="center">Librería de machine learning construida sobre Tensorflow.JS</h2>
 
