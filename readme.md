@@ -23,9 +23,11 @@ PIXELITY.JS es una interfaz amigable de alto nivel para TensorFlow.js, una bibli
 
 ## Instalación
 
-## Creditos
+git clone https://github.com/pixelitystudios/PIXELITY.JS.git
+cd PIXELITY.JS
+npm install
 
-_In alphabetical order:_
+## Creditos
 
 - [Abraham Huerta](https://pixelitystudios.com/@abrahamhuerta) - Desarrollador de la librería PIXELITY.JS
 - [Google](https://js.tensorflow.org/#getting-started) - Creador de la librería Tensorflow.JS
