@@ -6,7 +6,7 @@ import * as jpeg from 'jpeg-js'
 // we'll use as input to our classifier model.
 async function loadDecapitatedMobilenet() {
     const mobilenet = await tf.loadModel(
-        "https://pixelitystudios.com/models/mobilenet_v1/model.json"
+        "https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_1.0_224/model.json"
     );
 
     // Return a model that outputs an internal activation.

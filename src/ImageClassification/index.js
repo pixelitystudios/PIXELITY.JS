@@ -7,7 +7,7 @@ class ImageClassification{
 	constructor(config){
 		this.config = {
 			models: {
-				mobilenet: 'http://localhost:8081/models/mobilenet/model.json',
+				mobilenet: 'https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_1.0_224/model.json',
 				pixelity: ''
 			},
 			lang: 'es'
