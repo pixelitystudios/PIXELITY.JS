@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="id">
+    <button id="send">Enviar</button>
+    <script src="pixelity.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        const classifier = new pixelity.ImageClassifier();
+        async function init(){
+            await classifier.init()
+            classifier.loadModel('http://localhost:8081/models/pixelpet/')
+        }
+        async function predict(image){
+            const data = await classifier.fetch('http://localhost:3001/features/' + $('#id').val())
+            const features = await classifier.extractFeatures(data.data)
+            const prediction = await classifier.predict(features)
+            console.log(prediction)
+        }
+
+        async function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = async function (e) {
+                    await predict(e.target.result)
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+        $(function(){   
+            $("#send").on('click',function () { //set up a common class
+                predict()
+            });
+        });
+        init()
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="pixelity.js"></script>
+    <script>
+        async function init(){
+            const classifier = new pixelity.FeatureExtraction()
+            await classifier.load('http://localhost:8080/models/pixelpet/')
+
+            const prediction = await classifier.predict('http://localhost:8080/assets/classification/test/n02110063_49.jpg')
+
+            console.log(prediction)
+        }
+        init()
+    </script>
+</body>
+</html>

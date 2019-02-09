@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="pixelity.js"></script>
+    <script>
+        async function init(){
+            
+            const classifier = new pixelity.TextClassifier()
+            await classifier.loadModel({
+                type: 'http',
+                modelPath: 'http://localhost:8080/models/ava/model.json',
+                metadataPath: 'http://localhost:8080/models/ava/metadata.json',
+            });
+
+            const bot = new pixelity.BotFramework(classifier)
+
+            bot.setCustomResponse('Perdona, no te entiendo!')
+
+
+            bot.on('simple:response', (response) => {
+                console.log('Mood: ', response.prediction.intent.extras.mood)
+                console.log('A.V.A: ', response.input)
+                if(response.prediction.intent){
+                    bot.setContext(response.prediction.intent.extras.target)
+                }
+                if(response.prediction.intent.extras.action == 'greeting'){
+                    console.log('User: ', 'como estas')
+                    bot.sendMessage('Como estas')
+                }
+                if(response.prediction.intent.extras.action == 'howareyou'){
+                    console.log('User: ', 'mal')
+                    bot.sendMessage('mal')
+                }
+                if(response.prediction.intent.extras.action == 'howareyou:answer'){
+                    console.log('User: ', 'que eres?')
+                    bot.sendMessage('que eres?')
+                }
+            })
+            bot.on('form:response', (response) => console.log(response))
+            bot.on('close:form', (response, form) => console.log(response, form))
+            
+            
+            bot.subscribe({
+                name: '',
+                email: '',
+                phone: '',
+                gender: '',
+                birthday: ''
+            })
+
+            bot.setContext('generic')
+
+            bot.sendMessage('Hola!')
+        }
+        init()
+    </script>
+</body>
+</html>

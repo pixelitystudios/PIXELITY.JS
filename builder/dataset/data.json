@@ -1,0 +1,393 @@
+[
+    {
+        "patterns": [
+            "muestrame tus productos",
+            "que productos manejan",
+            "cuales son sus productos",
+            "dime tus productos",
+            "que productos tienen"
+        ],
+        "personality": "generic",
+        "title": "Mostrar productos",
+        "suggestions": [],
+        "action": "show:products",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro.. En un momento te muestro nuestros productos"
+        ]
+    },
+    {
+        "patterns": [
+            "muestrame tus servicios",
+            "que servicios manejan",
+            "cuales son sus servicios",
+            "cuales son tus servicios",
+            "dime tu servicios",
+            "platicame de tus servicios"
+        ],
+        "personality": "generic",
+        "title": "Mostrar servicios",
+        "suggestions": [],
+        "action": "show:services",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro.. en un momento te muestro nuestros servicios"
+        ]
+    },
+    {
+        "patterns": [
+            "muestrame tus horarios",
+            "cuales son sus horarios",
+            "cuales son tus horarios",
+            "que horarios manejan",
+            "que horarios tienen",
+            "dime tus horarios",
+            "en que horarios los encuentro",
+            "cuando los puedo encontrar"
+        ],
+        "personality": "generic",
+        "title": "Mostrar horarios",
+        "suggestions": [],
+        "action": "show:schedule",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro.. en un momento te muestro nuestros horarios"
+        ]
+    },
+    {
+        "patterns": [
+            "muestrame tus telefonos",
+            "cuales son sus telefonos",
+            "a donde me comunico con ustedes",
+            "como me comunico con ustedes",
+            "a donde les puedo marcar",
+            "a donde les llamo",
+            "me quiero comunicar con ustedes",
+            "cuales son tus teléfonos"
+        ],
+        "personality": "generic",
+        "title": "Mostrar telefonos",
+        "suggestions": [],
+        "action": "show:phones",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro.. mira estos son nuestros teléfonos"
+        ]
+    },
+    {
+        "patterns": [
+            "muestrame mi carrito",
+            "quiero ver mi carrito",
+            "ensename mi carrito",
+            "que hay en mi carrito",
+            "que tengo en mi carrito",
+            "mostrar carrito"
+        ],
+        "personality": "generic",
+        "title": "Mostrar carrito",
+        "suggestions": [],
+        "action": "show:cart",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro.. en un momento te muestro tu carrito"
+        ]
+    },
+    {
+        "patterns": [
+            "quienes son ustedes",
+            "que hacen ustedes",
+            "quienes son",
+            "platicame de ustedes",
+            "platicame de tu empresa",
+            "cuentame de tu empresa",
+            "platicame de tu agencia",
+            "platicame de tu compania",
+            "que hace su empresa"
+        ],
+        "personality": "generic",
+        "title": "Información global",
+        "suggestions": [],
+        "action": "show:global:info",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Por supuesto!"
+        ]
+    },
+    {
+        "patterns": [
+            "muestrame tu ubicacion",
+            "donde los encuentro",
+            "donde estan ubicados",
+            "en donde estan",
+            "cual es su direccion",
+            "como llego",
+            "en donde se encuentran"
+        ],
+        "personality": "generic",
+        "title": "Mostrar ubicacion",
+        "suggestions": [],
+        "action": "show:location",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro!"
+        ]
+    },
+    {
+        "patterns": [
+            "como estas",
+            "como andas",
+            "como te encuentras",
+            "como andamos",
+            "que hay de nuevo",
+            "que tal estas"
+        ],
+        "personality": "generic",
+        "title": "Como estas",
+        "suggestions": [
+            "Muéstrame tus productos",
+            "Muéstrame tus servicios",
+            "¿Cuales son tus teléfonos?",
+            "¿En donde están ubicados?",
+            "¿Cual es tu correo electrónico?"
+        ],
+        "action": "text",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Muy bien gracias! ¿Que puedo hacer por ti hoy?"
+        ]
+    },
+    {
+        "patterns": [
+            "hola",
+            "buen dia",
+            "buenos dias",
+            "buenas noches",
+            "buenas tardes",
+            "hola buen dia",
+            "hola buenas tardes",
+            "hola buenas noches",
+            "hola buenos dias",
+            "hola que tal",
+            "hey que onda",
+            "hey",
+            "alo que tal"
+        ],
+        "personality": "generic",
+        "title": "Saludo",
+        "suggestions": [
+            "Muéstrame tus productos",
+            "Muéstrame tus servicios",
+            "¿Cuales son tus teléfonos?",
+            "¿En donde están ubicados?",
+            "¿Cual es tu correo electrónico?"
+        ],
+        "action": "text",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Hola buen día! ¿Hay algo en lo que te pueda ayudar hoy?"
+        ]
+    },
+    {
+        "patterns": [
+            "que eres",
+            "quien eres"
+        ],
+        "personality": "generic",
+        "title": "Chatbot",
+        "suggestions": [],
+        "action": "text",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Soy un chatbot que utiliza machine learning para aprender del comportamiento de nuestros clientes para ofrecer una mejor atención a sus clientes potenciales"
+        ]
+    },
+    {
+        "patterns": [
+            "que es machine learning"
+        ],
+        "personality": "generic",
+        "title": "Machine learning",
+        "suggestions": [
+            "¿Que es Deep Learning?"
+        ],
+        "action": "text",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "El aprendizaje automático o aprendizaje automatizado o aprendizaje de máquinas (del inglés, \"Machine Learning\") es el subcampo de las ciencias de la computación y una rama de la inteligencia artificial, cuyo objetivo es desarrollar técnicas que permitan que las computadoras aprendan"
+        ]
+    },
+    {
+        "patterns": [
+            "que es deep learning"
+        ],
+        "personality": "generic",
+        "title": "Deep learning",
+        "suggestions": [
+            "¿Que es Machine Learning?"
+        ],
+        "action": "text",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Aprendizaje profundo (en inglés, deep learning) es un conjunto de algoritmos de clase aprendizaje automático (en inglés, machine learning) que intenta modelar abstracciones de alto nivel en datos usando arquitecturas compuestas de transformaciones no lineales múltiples"
+        ]
+    },
+    {
+        "patterns": [
+            "Dame más información sobre el servicio {servicio}"
+        ],
+        "personality": "generic",
+        "title": "Servicio",
+        "suggestions": [],
+        "action": "show:service",
+        "entity": {
+            "entity": "servicio"
+        },
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro...",
+            "Muy bien!"
+        ]
+    },
+    {
+        "patterns": [
+            "Dame más información sobre el producto"
+        ],
+        "personality": "generic",
+        "title": "Producto",
+        "suggestions": [],
+        "action": "show:product",
+        "entity": {
+            "entity": "producto",
+            "type": "trim",
+            "afterLast": ["el producto"]
+        },
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro..",
+            "Muy bien!"
+        ]
+    },
+    {
+        "patterns": [
+            "Cuéntame más sobre",
+            "platicame sobre tu empresa",
+            "cuentame mas sobre ustedes"
+        ],
+        "personality": "generic",
+        "title": "Nosotros",
+        "suggestions": [],
+        "action": "about:us",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro!",
+            "Claro mira.."
+        ]
+    },
+    {
+        "patterns": [
+            "dame mas info",
+            "necesito informacion",
+            "dame informacion",
+            "quiero informes"
+        ],
+        "personality": "generic",
+        "title": "Informes",
+        "suggestions": [
+            "Muéstrame tus productos",
+            "Muéstrame tus servicios",
+            "¿Cuales son tus teléfonos?",
+            "¿En donde están ubicados?",
+            "¿Cual es tu correo electrónico?"
+        ],
+        "action": "text",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Por supuesto! ¿Que tipo de información necesitas?"
+        ]
+    },
+    {
+        "patterns": [
+            "Cual es tu correo electronico",
+            "dame tu correo",
+            "dime tu correo",
+            "dime tu mail",
+            "cual es tu mail",
+            "cuales son tus correos",
+            "dime tus correos"
+        ],
+        "personality": "generic",
+        "title": "Mostrar Correos",
+        "suggestions": [],
+        "action": "show:emails",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Claro.."
+        ]
+    },
+    {
+        "patterns": [
+            "quiero hacer una reservacion",
+            "quiero sacar una cita",
+            "sacame una cita",
+            "sacame una reservacion",
+            "quiero una cita",
+            "quiero una reservacion",
+            "quiero una mesa",
+            "consigueme una mesa",
+            "consigueme una reservacion",
+            "consigueme una cita",
+            "dame una mesa",
+            "necesito una mesa",
+            "necesito una cita",
+            "necesito una reservacion",
+            "agendar cita",
+            "agendame una cita"
+        ],
+        "personality": "generic",
+        "title": "Reservacion",
+        "suggestions": [],
+        "action": "make:reservation",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Me parece muy bien",
+            "Entendido!"
+        ]
+    },
+    {
+        "patterns": [
+            "gracias",
+            "muchas gracias",
+            "te agradezco",
+            "gracias por tu ayuda"
+        ],
+        "personality": "generic",
+        "title": "Agradecimiento",
+        "suggestions": [],
+        "action": "text",
+        "type": "text",
+        "context": "generic",
+        "responses": [
+            "Es un placer!",
+            "Me agrada ser de ayuda!",
+            "Por nada!"
+        ]
+    }
+]

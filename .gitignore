@@ -1,4 +1,6 @@
-builder
+builder/assets
+builder/dist
+builder/models
 docs
 extra
 node_modules

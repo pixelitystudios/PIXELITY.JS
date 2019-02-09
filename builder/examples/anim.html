@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/anim/animate.min.css">
+    <style>
+        body{
+            background: #f6f6fc;
+        }
+        .viewport-image{
+            width: 100%;
+            height: 100%;
+            transition: all .3s ease;
+        }
+        #viewport{
+            margin: 0 auto 0;
+            width: 150px;
+            height: 150px;
+        }
+        .showed{
+            opacity: 1;
+        }
+
+        .hided{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="viewport"></div>
+
+    <script src="pixelity.js"></script>
+    <script>
+        async function init(){
+            const anim = new pixelity.Anim('viewport', 'rubberBand')
+            anim.setAnims([
+                {
+                    name: 'angry',
+                    image: 'assets/anim/angry.gif'
+                },
+                {
+                    name: 'boring',
+                    image: 'assets/anim/boring.gif'
+                },
+                {
+                    name: 'confusing',
+                    image: 'assets/anim/confusing.gif'
+                },
+                {
+                    name: 'curious',
+                    image: 'assets/anim/curious.gif'
+                },
+                {
+                    name: 'happy',
+                    image: 'assets/anim/happy.gif'
+                },
+                {
+                    name: 'listening',
+                    image: 'assets/anim/listening.gif'
+                },
+                {
+                    name: 'loading',
+                    image: 'assets/anim/loading.gif',
+                    initial: true
+                },
+                {
+                    name: 'rage',
+                    image: 'assets/anim/rage.gif'
+                },
+                {
+                    name: 'sad',
+                    image: 'assets/anim/sad.gif'
+                },
+                {
+                    name: 'speaking',
+                    image: 'assets/anim/speaking.gif'
+                },
+                {
+                    name: 'waiting',
+                    image: 'assets/anim/waiting.gif'
+                },
+                {
+                    name: 'wakeup',
+                    image: 'assets/anim/wakeup.gif'
+                }
+            ])
+
+            /*anim.program('curiosity', {
+                curious: 3000,
+                happy: 4000,
+                waiting: 5000,
+                angry: 4000,
+                rage: 4000,
+                confusing: 3000
+            })
+
+            anim.start('curiosity', 'infinite')*/
+            anim.listening()
+        }
+        init()
+    </script>
+</body>
+</html>

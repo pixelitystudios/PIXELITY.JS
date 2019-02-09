@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="pixelity.js"></script>
+    <script>
+        async function init(){
+            const classifier = new pixelity.ImageClassification();
+            classifier.loadModel().then(async () => {
+
+                let images = [
+                    'http://localhost:8080/assets/classification/test/img_340_beagle_0_600.jpg',
+                    'http://localhost:8080/assets/classification/test/alaskan-malamute-1.jpg',
+                    'http://localhost:8080/assets/classification/test/img_20180418_wa0008__3367.jpg',
+                    'http://localhost:8080/assets/classification/test/husky-siberien1.png',
+                    'http://localhost:8080/assets/classification/test/download.jpeg',
+                ]
+
+                classifier.useCustomModel()
+
+                await classifier.addExample(images[0], 'pepe')
+                await classifier.addExample(images[1], 'oso')
+
+                /*classifier.extractFeatures(images[2]).then(async (features) => {
+                    const prediction = await classifier.predict(features)
+                    console.log(prediction)
+                })*/
+
+                //classifier.save()
+
+                await classifier.train().then(() => {
+                    console.log(classifier.metadata)
+                    //sclassifier.save()
+                })
+
+                /*await classifier.train().then(async () => {
+                    
+
+                    const features1 = await classifier.extractFeatures(images[0])
+                    const prediction1 = await classifier.predict(features1)
+                    console.log(prediction1)
+
+                    const features2 = await classifier.extractFeatures(images[1])
+                    const prediction2 = await classifier.predict(features2)
+                    console.log(prediction2)
+                })*/
+
+
+            })
+        }
+        init()
+    </script>
+</body>
+</html>

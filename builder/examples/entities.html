@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="pixelity.js"></script>
+    <script>
+        async function init(){
+            
+            const classifier = new pixelity.TextClassifier()
+            await classifier.loadModel({
+                type: 'http',
+                modelPath: 'http://localhost:8080/models/pixy/model.json',
+                metadataPath: 'http://localhost:8080/models/pixy/metadata.json',
+            });
+            const entities = new pixelity.EntityClassifier()
+            await entities.loadModel({
+                type: 'http',
+                modelPath: 'http://localhost:8080/models/entities/model.json',
+                metadataPath: 'http://localhost:8080/models/entities/metadata.json',
+            });
+            const bot = new pixelity.BotFramework(classifier, entities)
+
+            bot.setCustomResponse('Perdona, no te entiendo!')
+    
+            bot.setCommands({
+                '(*any)cuanto es *math': (any, math, input) => {
+                    bot.setResponse(input, bot.math(math), 'La respuesta es: ')
+                },
+                '(*any) que es *search': (any, search, input) => {
+                    console.log(search, bot.context())
+                },
+                '(*any)quien es *search': (any, search, input) => {
+                    console.log(bot.context(search))
+                }
+            })
+
+            //bot.startSpeechRecognition()
+
+            //bot.setCommandDebug(true)
+
+
+
+            bot.on('simple:response', (response) => console.log(response))
+            bot.on('form:response', (response) => console.log(response))
+            bot.on('close:form', (response, form) => console.log(response, form))
+            
+            bot.on('make:reservation', async (response) => {
+                bot.createForm('reservations',response,'Perfecto! Estamos enviando tu reservación')
+            })
+            
+            bot.subscribe({
+                name: '',
+                email: '',
+                phone: '',
+                gender: '',
+                birthday: ''
+            })
+
+            bot.setContext('generic')
+
+            bot.sendMessage('quiero una guitarra')
+        }
+        init()
+    </script>
+</body>
+</html>

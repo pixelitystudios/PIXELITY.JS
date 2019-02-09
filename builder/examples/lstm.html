@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="input" cols="30" rows="10">
+Cuántas veces, amor, te amé sin verte y tal vez sin recuerdo, 
+
+sin reconocer tu mirada, sin mirarte, centaura, 
+
+en regiones contrarias, en un mediodía quemante: 
+
+eras sólo el aroma de los cereales que amo. 
+
+Tal vez te vi, te supuse al pasar levantando una copa 
+
+en Angola, a la luz de la luna de Junio, 
+
+o eras tú la cintura de aquella guitarra 
+
+que toqué en las tinieblas y sonó como el mar desmedido. 
+
+Te amé sin que yo lo supiera, y busqué tu memoria. 
+
+En las casas vacías entré con linterna a robar tu retrato. 
+
+Pero yo ya sabía cómo era. De pronto 
+
+mientras ibas conmigo te toqué y se detuvo mi vida: 
+
+frente a mis ojos estabas, reinándome, y reinas. 
+
+Como hoguera en los bosques el fuego es tu reino.
+
+Un poema que trata del recuerdo del amor, un amor que, posiblemente, no sea correspondido. Se puede seguir amando a pesar del tiempo y la distancia, se puede estar enamorado sin ver, sólo con los recuerdos y la esperanza. Es la fuerza del corazón.
+    </textarea>
+    <script src="pixelity.js"></script>
+    <script>
+        async function init(){
+
+            const text = document.getElementById('input').value;
+
+            const LSTM_LAYERS = 2;
+            const LSTM_SIZE = 128;
+
+            const lstm = new pixelity.LSTM({
+                seqLength: 2,
+                outputKeepProb: 0.2,
+                numLayers: LSTM_LAYERS,
+                hiddenSize: LSTM_SIZE
+            })
+
+            await lstm.compile(text, 2)
+            await lstm.train({
+                batchSize: 1,
+                epochs: 100
+            })
+        }
+        init()
+    </script>
+</body>
+</html>

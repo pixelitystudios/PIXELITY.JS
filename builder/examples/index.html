@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div  class="webcam">
+        <video style="opacity: 1;" width="240" height="240" id="inputVideo" class="camera_stream" autoplay muted></video>
+        <canvas width="240" height="240" id="overlay"></canvas>
+    </div>
+    <input type="text" id="name" placeholder="Nombre">
+    <button onclick="takePhoto(true)">Agregar fotografia</button>
+    <button onclick="takePhoto(false)">Reconocer</button>
+    <script src="pixelity.js"></script>
+    <script>
+
+        let videoEl;
+        let canvas;
+        let model;
+        let train = true;
+        let manifest = []
+
+        if(localStorage.getItem('manifest')){
+            manifest = JSON.parse(localStorage.getItem('manifest'))
+        }else{
+            localStorage.setItem('manifest', JSON.stringify([]))
+        }
+
+        let faceID;
+
+        async function startVideo(){
+            videoEl = document.getElementById('inputVideo')
+            canvas = document.getElementById('overlay')
+            navigator.getUserMedia(
+                { video: {} },
+                stream => videoEl.srcObject = stream,
+                err => console.error(err)
+            )
+        }
+
+        function takePhoto(t){
+            train = t
+            onPlay(videoEl)
+        }
+
+        async function onPlay(videoEl) {
+            if(!train){
+                const face = await faceID.fromVideo(videoEl);
+                if(face){
+                    const match = model.findBestMatch(face.descriptor)
+                    console.log(match)
+
+                }
+                setTimeout(() => {onPlay(videoEl)}, 6000)
+            }else{
+                const name = document.getElementById('name').value
+                const face = await faceID.fromVideo(videoEl);
+                if(face){
+                    let found = false;
+                    let count = 0;
+                    let i = 0;
+                    for(let m of manifest){
+                        if(m.label == name){
+                            found = true;
+                            i = count;
+                        }
+                        count++;
+                    }
+
+                    if(found){
+                        manifest[i].descriptors.push(face.descriptor)
+                    }else{
+                        manifest.push({
+                            label: name,
+                            descriptors: [face.descriptor]
+                        })
+                    }
+                    localStorage.setItem('manifest', JSON.stringify(manifest))
+                }
+            }
+        }
+
+        async function onLoad(){
+            if(manifest.length > 0){
+                let faces = JSON.parse(localStorage.getItem('manifest'))
+                model = await faceID.recognition(faces)
+            }
+        }
+
+        async function init(){
+            faceID = await new pixelity.FaceID('http://localhost:8080/models/faceapi/')
+            faceID.setDebug(true)
+            faceID.on('model:load', async () => {
+                if(manifest.length > 0){
+                    onLoad(faceID)
+                    train = false;
+                }
+                startVideo()
+            })
+        }
+
+        init()
+    </script>
+</body>
+</html>
