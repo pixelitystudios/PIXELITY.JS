@@ -23,9 +23,13 @@ PIXELITY.JS es una interfaz amigable de alto nivel para TensorFlow.js, una bibli
 
 ## Instalación
 
+```js
+
 git clone https://github.com/pixelitystudios/PIXELITY.JS.git
 cd PIXELITY.JS
 npm install
+
+```
 
 ## Creditos
 
