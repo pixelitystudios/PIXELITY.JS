@@ -7,17 +7,7 @@
     "eslint": "eslint",
     "build": "webpack --config webpack.prod.babel.js",
     "compile": "babel src -d lib",
-    "serve": "http-server ./build --cors -p 4000",
-    "train:classifier": "node ./extra/node/text-classification/index.js",
-    "train:entities": "node --max_old_space_size=8000 ./extra/node/entityclassifier/index.js ",
-    "train:sketcher": "node ./extra/node/sketch-code/index.js",
-    "train:lstm": "node ./extra/node/lstm/index.js",
-    "train:breed": "node ./extra/node/pixelpet/breed/index.js",
-    "train:knn": "node ./extra/node/pixelpet/breed/knn.js",
-    "test:classifier": "node ./extra/node/text-classification/predict.js",
-    "start": "webpack-dev-server --open --config webpack.dev.babel.js",
-    "publish": "cp -r ./dist ./build/",
-    "intents": "http-server ./public -p 4300"
+    "start": "webpack-dev-server --open --config webpack.dev.babel.js"
   },
   "dependencies": {
     "@tensorflow-models/knn-classifier": "^0.2.2",
