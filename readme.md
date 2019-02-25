@@ -3,7 +3,7 @@
 </p>
 <h2 align="center">Librería de machine learning construida sobre Tensorflow.JS</h2>
 
-Pixelity.JS tiene como objetivo hacer que el aprendizaje automático sea accesible para una amplia audiencia programadores. La librería proporciona acceso a modelos y algoritmos de aprendizaje automático en el navegador, construidos sobre TensorFlow.js sin otras dependencias externas.
+Pixelity.JS tiene como objetivo hacer que el aprendizaje automático sea accesible para una amplia audiencia programadores. La librería proporciona acceso a modelos y algoritmos de aprendizaje automático en el navegador, construidos sobre TensorFlow.js.
 
 > Interesado en ver PIXELITY.JS en acción? Dirígete a [Playground](https://www.pixelitystudios.com/@playground) para jugar con la librería!
 
