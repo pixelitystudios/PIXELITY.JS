@@ -33,7 +33,7 @@ npm install
 
 ## Creditos
 
-- [Abraham Huerta](https://pixelitystudios.com/@abrahamhuerta) - Desarrollador de la librería PIXELITY.JS
+- [Abraham Huerta](https://github.com/AbrahamHuertaDev) - Desarrollador de la librería PIXELITY.JS
 - [Google](https://js.tensorflow.org/#getting-started) - Creador de la librería Tensorflow.JS
 - [Pixelity Studios](https://pixelitystudios.com) - Empresa patrocinadora
 
